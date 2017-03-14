@@ -24809,6 +24809,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.cnds.CompareInstanceVar,
 	cr.plugins_.Text.prototype.acts.SetVisible,
 	cr.behaviors.Platform.prototype.acts.SetJumpStrength,
+	cr.plugins_.Touch.prototype.cnds.OnTapGestureObject,
 	cr.plugins_.Sprite.prototype.acts.SetVisible,
 	cr.behaviors.Platform.prototype.acts.SetIgnoreInput,
 	cr.plugins_.Text.prototype.acts.SetText,
