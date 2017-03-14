@@ -24667,7 +24667,7 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.exps.lerp,
 	cr.plugins_.Sprite.prototype.exps.X,
 	cr.plugins_.Sprite.prototype.exps.Y,
-	cr.system_object.prototype.cnds.IsOnPlatform,
+	cr.system_object.prototype.cnds.CompareVar,
 	cr.plugins_.Sprite.prototype.acts.Destroy,
 	cr.system_object.prototype.cnds.IsGroupActive,
 	cr.behaviors.Platform.prototype.cnds.OnMove,
@@ -24699,5 +24699,8 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.acts.SetVisible,
 	cr.behaviors.Platform.prototype.acts.SetIgnoreInput,
 	cr.plugins_.Text.prototype.acts.SetText,
-	cr.plugins_.Sprite.prototype.acts.SetBoolInstanceVar
+	cr.plugins_.Sprite.prototype.acts.SetBoolInstanceVar,
+	cr.system_object.prototype.acts.SetVar,
+	cr.system_object.prototype.acts.GoToLayout,
+	cr.plugins_.Mouse.prototype.cnds.OnObjectClicked
 ];};

@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1489473503,
+	"version": 1489475309,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -25,6 +25,9 @@
 		"images/shard07-sheet0.png",
 		"images/shard08-sheet0.png",
 		"images/sprite-sheet0.png",
+		"images/sprite2-sheet0.png",
+		"images/sprite3-sheet0.png",
+		"images/playbutton-sheet0.png",
 		"media/land.m4a",
 		"media/land.ogg",
 		"media/computer.m4a",
