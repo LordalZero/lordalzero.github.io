@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1489659995,
+	"version": 1489664515,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -48,6 +48,9 @@
 		"images/commandcenter-sheet0.png",
 		"images/computer-sheet0.png",
 		"images/computerwindow-sheet0.png",
+		"images/hazard-sheet0.png",
+		"images/tutorialoverlay-sheet0.png",
+		"images/tutorialoverlay-sheet1.png",
 		"media/land.m4a",
 		"media/land.ogg",
 		"media/computer.m4a",

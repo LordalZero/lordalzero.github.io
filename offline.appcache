@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1489659995
+#1489664515
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
@@ -47,6 +47,9 @@ images/inmscollisions-sheet0.png
 images/commandcenter-sheet0.png
 images/computer-sheet0.png
 images/computerwindow-sheet0.png
+images/hazard-sheet0.png
+images/tutorialoverlay-sheet0.png
+images/tutorialoverlay-sheet1.png
 media/land.m4a
 media/land.ogg
 media/computer.m4a
