@@ -25341,7 +25341,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Mouse.prototype.cnds.OnObjectClicked,
 	cr.system_object.prototype.cnds.OnLoadFinished,
 	cr.plugins_.LoLMain.prototype.acts.SendInit,
-	cr.plugins_.Audio.prototype.acts.Preload,
 	cr.behaviors.Bullet.prototype.acts.SetSpeed,
 	cr.plugins_.LoLMain.prototype.acts.SubmitProgress,
 	cr.plugins_.LoLMain.prototype.acts.CompleteGame

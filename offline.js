@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1489799794,
+	"version": 1489801150,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -81,7 +81,8 @@
 		"media/zoom.ogg",
 		"media/msonfire1.m4a",
 		"media/msonfire1.ogg",
-		"media/music1.ogg",
+		"media/music01w.m4a",
+		"media/music01w.ogg",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
