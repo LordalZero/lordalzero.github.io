@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1489664792
+#1489796909
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
@@ -23,7 +23,9 @@ images/lshard08-sheet1.png
 images/lunartombstone-sheet0.png
 images/lunartombstone-sheet1.png
 images/lunartombstonebutton-sheet0.png
-images/bg.png
+images/tiledbackground.png
+images/msmoving-sheet0.png
+images/msmoving-sheet1.png
 images/tile-sheet0.png
 images/tile-sheet1.png
 images/player-sheet0.png
@@ -62,7 +64,6 @@ media/dead.m4a
 media/dead.ogg
 media/jump1.m4a
 media/jump1.ogg
-media/msonfire01.m4a
 media/read.m4a
 media/read.ogg
 media/shard.m4a
@@ -77,6 +78,9 @@ media/wrongshard.m4a
 media/wrongshard.ogg
 media/zoom.m4a
 media/zoom.ogg
+media/msonfire1.m4a
+media/msonfire1.ogg
+media/music01.ogg
 icon-16.png
 icon-32.png
 icon-114.png

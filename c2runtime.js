@@ -25186,28 +25186,99 @@ cr.behaviors.solid = function(runtime)
 	};
 	behaviorProto.acts = new Acts();
 }());
+;
+;
+cr.behaviors.wrap = function(runtime)
+{
+	this.runtime = runtime;
+};
+(function ()
+{
+	var behaviorProto = cr.behaviors.wrap.prototype;
+	behaviorProto.Type = function(behavior, objtype)
+	{
+		this.behavior = behavior;
+		this.objtype = objtype;
+		this.runtime = behavior.runtime;
+	};
+	var behtypeProto = behaviorProto.Type.prototype;
+	behtypeProto.onCreate = function()
+	{
+	};
+	behaviorProto.Instance = function(type, inst)
+	{
+		this.type = type;
+		this.behavior = type.behavior;
+		this.inst = inst;				// associated object instance to modify
+		this.runtime = type.runtime;
+	};
+	var behinstProto = behaviorProto.Instance.prototype;
+	behinstProto.onCreate = function()
+	{
+		this.mode = this.properties[0];		// 0 = wrap to layout, 1 = wrap to viewport
+	};
+	behinstProto.tick = function ()
+	{
+		var inst = this.inst;
+		inst.update_bbox();
+		var bbox = inst.bbox;
+		var layer = inst.layer;
+		var layout = layer.layout;
+		var lbound = 0, rbound = 0, tbound = 0, bbound = 0;
+		if (this.mode === 0)
+		{
+			rbound = layout.width;
+			bbound = layout.height;
+		}
+		else
+		{
+			lbound = layer.viewLeft;
+			rbound = layer.viewRight;
+			tbound = layer.viewTop;
+			bbound = layer.viewBottom;
+		}
+		if (bbox.right < lbound)
+		{
+			inst.x = (rbound - 1) + (inst.x - bbox.left);
+			inst.set_bbox_changed();
+		}
+		else if (bbox.left > rbound)
+		{
+			inst.x = (lbound + 1) - (bbox.right - inst.x);
+			inst.set_bbox_changed();
+		}
+		else if (bbox.bottom < tbound)
+		{
+			inst.y = (bbound - 1) + (inst.y - bbox.top);
+			inst.set_bbox_changed();
+		}
+		else if (bbox.top > bbound)
+		{
+			inst.y = (tbound + 1) - (bbox.bottom - inst.y);
+			inst.set_bbox_changed();
+		}
+	};
+}());
 cr.getObjectRefTable = function () { return [
 	cr.plugins_.Audio,
 	cr.plugins_.Browser,
+	cr.plugins_.gamepad,
 	cr.plugins_.Mouse,
 	cr.plugins_.Keyboard,
-	cr.plugins_.gamepad,
 	cr.plugins_.WebStorage,
+	cr.plugins_.Sprite,
+	cr.plugins_.TiledBg,
+	cr.plugins_.Touch,
 	cr.plugins_.Text,
 	cr.plugins_.LoLMain,
-	cr.plugins_.Sprite,
-	cr.plugins_.Touch,
-	cr.plugins_.TiledBg,
+	cr.behaviors.wrap,
+	cr.behaviors.Bullet,
 	cr.behaviors.Platform,
 	cr.behaviors.scrollto,
-	cr.behaviors.Bullet,
 	cr.behaviors.solid,
 	cr.behaviors.Fade,
 	cr.system_object.prototype.cnds.OnLayoutStart,
-	cr.system_object.prototype.acts.CreateObject,
-	cr.plugins_.Text.prototype.acts.SetWebFont,
-	cr.system_object.prototype.acts.Wait,
-	cr.plugins_.Text.prototype.acts.Destroy,
+	cr.plugins_.Audio.prototype.acts.Play,
 	cr.system_object.prototype.cnds.EveryTick,
 	cr.plugins_.Sprite.prototype.acts.SetPosToObject,
 	cr.plugins_.Sprite.prototype.acts.SetPos,
@@ -25225,7 +25296,6 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.Platform.prototype.cnds.OnMove,
 	cr.behaviors.Platform.prototype.cnds.OnStop,
 	cr.behaviors.Platform.prototype.cnds.OnJump,
-	cr.plugins_.Audio.prototype.acts.Play,
 	cr.behaviors.Platform.prototype.cnds.OnLand,
 	cr.behaviors.Platform.prototype.cnds.IsMoving,
 	cr.behaviors.Platform.prototype.cnds.OnFall,
@@ -25242,28 +25312,36 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.cnds.CompareInstanceVar,
 	cr.plugins_.TiledBg.prototype.acts.SetPos,
 	cr.plugins_.TiledBg.prototype.exps.X,
-	cr.plugins_.Text.prototype.acts.SetText,
 	cr.plugins_.Sprite.prototype.cnds.IsBoolInstanceVarSet,
 	cr.plugins_.Sprite.prototype.acts.SetBoolInstanceVar,
 	cr.plugins_.Sprite.prototype.acts.SetInstanceVar,
 	cr.plugins_.Sprite.prototype.cnds.OnCreated,
 	cr.behaviors.Bullet.prototype.acts.SetAngleOfMotion,
+	cr.system_object.prototype.acts.Wait,
 	cr.plugins_.Sprite.prototype.cnds.OnCollision,
+	cr.system_object.prototype.acts.CreateObject,
 	cr.behaviors.Platform.prototype.cnds.IsOnFloor,
 	cr.plugins_.Sprite.prototype.cnds.IsOverlapping,
 	cr.plugins_.Text.prototype.acts.SetVisible,
 	cr.behaviors.Platform.prototype.acts.SetJumpStrength,
+	cr.plugins_.Text.prototype.acts.SetText,
 	cr.plugins_.Touch.prototype.cnds.OnTouchObject,
 	cr.plugins_.Sprite.prototype.acts.SetVisible,
 	cr.behaviors.Platform.prototype.acts.SetIgnoreInput,
+	cr.behaviors.Fade.prototype.acts.StartFade,
+	cr.system_object.prototype.acts.GoToLayout,
 	cr.behaviors.scrollto.prototype.acts.Shake,
 	cr.behaviors.solid.prototype.acts.SetEnabled,
 	cr.behaviors.scrollto.prototype.acts.SetEnabled,
 	cr.system_object.prototype.acts.SetVar,
 	cr.plugins_.Sprite.prototype.cnds.IsVisible,
 	cr.system_object.prototype.acts.RestartLayout,
-	cr.system_object.prototype.acts.GoToLayout,
 	cr.plugins_.Mouse.prototype.cnds.OnObjectClicked,
 	cr.system_object.prototype.cnds.OnLoadFinished,
-	cr.plugins_.LoLMain.prototype.acts.SendInit
+	cr.plugins_.LoLMain.prototype.acts.SendInit,
+	cr.plugins_.Text.prototype.acts.SetWebFont,
+	cr.plugins_.Text.prototype.acts.Destroy,
+	cr.behaviors.Bullet.prototype.acts.SetSpeed,
+	cr.plugins_.LoLMain.prototype.acts.SubmitProgress,
+	cr.plugins_.LoLMain.prototype.acts.CompleteGame
 ];};
