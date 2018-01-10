@@ -247,7 +247,13 @@
       "UnmuteSound": 30,
       "MuteMusic": 30,
       "UnmuteMusic": 30,
-      "FinishGame": 30
+      "FinishGame": 30,
+      "Congrats": 200,
+      "EndScreenText": 700,
+      "KeepPlaying": 30,
+      "CloseGame": 30,
+      "Match": 56,
+      "DontMatch": 56
     }
   },
   "en": {
@@ -359,6 +365,8 @@
     "AlreadySelected": "Already Selected",
     "WrongGender": "Please Select a Female and a Male organism.",
     "WrongName": "Please Select 2 Organisms of the same specie",
+    "Match": "Organism Match, press BIG RED BUTTON to Start.",
+    "DontMatch": "Organism don't match, select another organism.",
     "Working": "Working...",
     "NewBaby": "New Baby Organism Created",
     "Unlock0": "Temperatures below 31.7 degrees Celsius produce females. Any temperature above that, right up until 34.5 degrees Celsius, produce males. This phenomenon is known as Temperature-Dependent Sex Determination (TSD).",
@@ -498,7 +506,11 @@
     "UnmuteSound": "Unmute Sound Effects",
     "MuteMusic": "Mute Music",
     "UnmuteMusic": "Unmute Music",
-    "FinishGame": "Finish Game"
+    "FinishGame": "Finish Game",
+    "Congrats": "Congratulations! You've completed the game!",
+    "EndScreenText": "You've learned about how different organisms are affected over time by different environmental effects. \nAlso you've managed to make some adult organisms mate and see their offspring's traits. \nWe sincerely hope you liked our game, if you did, please don't forget to rate our game!",
+    "KeepPlaying": "Keep Playing",
+    "CloseGame": "Close Game"
   },
   "es": {
     
