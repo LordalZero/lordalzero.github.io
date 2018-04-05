@@ -11,7 +11,7 @@
       // disable mobile webgl warning (important for ipad support)
       UnityLoader.compatibilityCheck = function (e, t, r) { t(); };
       // load the game
-      var gameInstance = UnityLoader.instantiate("gameContainer", "%UNITY_WEBGL_BUILD_URL%");
+      var gameInstance = UnityLoader.instantiate("gameContainer", "UNITY_WEBGL_BUILD_URL");
     </script>
   </head>
   <body>
